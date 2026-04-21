@@ -1,54 +1,60 @@
-# 📊 Databank - Enterprise Resource Planning (ERP) System
+# 📊 Databank - Integrated ERP System (PT Intisel)
 
-![Status](https://img.shields.io/badge/Status-In--Development-orange)
-![Role](https://img.shields.io/badge/Role-Lead%20Full%20Stack%20Engineer-blue)
-![Tech Stack](https://img.shields.io/badge/Stack-React%20%7C%20NestJS%20%7C%20PostgreSQL-green)
+![Project Status](https://img.shields.io/badge/Status-Active%20Development-boldgreen)
+![Tech Stack](https://img.shields.io/badge/Stack-React%20%7C%20NestJS%20%7C%20PostgreSQL-blue)
+![Architecture](https://img.shields.io/badge/Architecture-Modular%20Monolith-orange)
 
-**Databank** adalah sistem manajemen internal komprehensif yang dikembangkan dari nol (*from scratch*) untuk **PT Intisel Prodaktifakom**. Sistem ini dirancang untuk mengintegrasikan alur kerja perusahaan yang kompleks ke dalam satu platform digital yang efisien, aman, dan skalabel.
-
----
-
-## 📈 Impact & Achievements
-* **Operational Efficiency:** Berhasil mendigitalisasi alur kerja manual, meningkatkan efisiensi operasional perusahaan sekitar **35%**.
-* **End-to-End Ownership:** Memimpin seluruh siklus pengembangan, mulai dari perancangan arsitektur, pengembangan fitur inti, hingga deployment.
-* **Scalable Infrastructure:** Membangun fondasi backend yang mampu menangani manajemen data performa tinggi untuk kebutuhan internal jangka panjang.
-
-## 🚀 Key Modules & Features
-
-### 🛡️ Security & Access Control
-* **Dynamic RBAC:** Implementasi *Dynamic Role-Based Access Control* yang memungkinkan pengelolaan izin akses pengguna secara granular dan aman.
-* **Robust Authentication:** Sistem autentikasi berlapis untuk memastikan integritas data perusahaan.
-
-### 📦 Purchase Order (PO) Management
-* Siklus lengkap manajemen PO mulai dari pengajuan internal (*submission*), sistem persetujuan (*approval*), hingga proses penagihan (*billing/invoicing*).
-
-### 👥 Core Management Suite
-* **Attendance Tracking:** Modul absensi yang terintegrasi.
-* **Payroll Systems:** Automasi penggajian yang akurat berdasarkan data kehadiran dan kebijakan perusahaan.
-* **Real-time Dashboard:** Dasbor operasional yang menyatukan data pengadaan (*procurement*), kehadiran, dan payroll dalam satu tampilan intuitif.
-
-### 🎨 Modern UI/UX
-* **Responsive Design:** Dibangun menggunakan React dan Native CSS untuk performa maksimal.
-* **Accessibility:** Mendukung penuh *Light & Dark Mode* untuk optimalisasi pengalaman pengguna di berbagai perangkat.
-
-## 🛠️ Tech Stack
-
-| Layer | Technology |
-| :--- | :--- |
-| **Frontend** | React.js, Native CSS |
-| **Backend** | NestJS (Node.js Framework) |
-| **Database** | PostgreSQL |
-| **ORM** | Prisma ORM |
-| **Architecture** | RESTful API, Modular Monolith |
-
-## 🏗️ Architecture Insight
-Sistem ini menggunakan **NestJS** dengan **Prisma ORM** untuk memastikan keamanan tipe data (*type-safety*) di seluruh aplikasi. Arsitektur backend dirancang secara modular untuk memisahkan logika bisnis antara modul penggajian, absensi, dan pengadaan, sehingga memudahkan pemeliharaan dan pengembangan fitur di masa depan.
+**Databank** adalah sistem *Enterprise Resource Planning* (ERP) internal yang dibangun dari nol (*from scratch*) untuk **PT Intisel Prodaktifakom**. Sistem ini dirancang untuk mendigitalisasi proses bisnis manual, meningkatkan efisiensi operasional sebesar **35%**, dan menyediakan manajemen data yang terpusat serta aman.
 
 ---
 
-## 👨‍💻 Developer
-**Rafif Sava Adyvka Pratama**
-*Full Stack Engineer*
+## 📈 Impact & Business Value
+* **Efficiency Boost:** Berhasil mengotomatisasi alur kerja manual (PO, Absensi, Payroll), memangkas waktu operasional hingga ~35%.
+* **Data Integrity:** Menghilangkan redundansi data melalui sistem database relasional yang terstruktur.
+* **Scalability:** Arsitektur modular memungkinkan penambahan modul bisnis baru tanpa mengganggu fungsi yang sudah ada.
 
----
-*Disclaimer: Project ini adalah aplikasi internal milik PT Intisel Prodaktifakom. Source code bersifat rahasia (Private Repository).*
+## 🚀 Fitur Utama & Modul
+
+### 🔐 Security & Dynamic RBAC
+* **Granular Permissions:** Mengimplementasikan *Dynamic Role-Based Access Control* (RBAC) yang memungkinkan admin mengatur izin akses per fitur (misal: `USERS`, `ROLES`, `ADD_DATABANK`) secara real-time.
+* **Tiered Access:** Pemisahan akses antara pengguna umum dan manajemen (Role: High) untuk fitur sensitif seperti `Manage Attendance`.
+
+### 📦 PO & Data Management
+* **Purchase Order Lifecycle:** Manajemen siklus hidup PO mulai dari pengajuan, persetujuan, hingga invoicing.
+* **Databank Suite:** Modul CRUD terintegrasi untuk manajemen data inti perusahaan.
+
+### 🕒 Core Management Suite
+* **Attendance System:** Pelacakan kehadiran dengan pemisahan antarmuka pengisian (*Fill*) dan pengelolaan (*Manage*).
+* **Automated Payroll:** Sistem penggajian yang terintegrasi langsung dengan data kehadiran dan database internal.
+* **Operational Dashboard:** Dasbor real-time yang menyatukan metrik dari procurement, absensi, dan payroll.
+
+### 🎨 Premium UI/UX
+* **Dynamic Styling:** Antarmuka responsif dengan dukungan penuh **Dark & Light Mode** menggunakan Native CSS.
+* **Performance:** Menggunakan *Code Splitting* dan *Lazy Loading* (React Suspense) untuk memastikan aplikasi tetap ringan dan cepat saat diakses.
+
+## 🛠️ Analisis Tech Stack
+
+### Backend (databank-backend)
+* **Framework:** NestJS (Node.js) untuk arsitektur server-side yang skalabel.
+* **ORM:** Prisma ORM dengan pendekatan **Modular Schema** (Base, User, Role, Permission, Attendance, Databank) untuk skalabilitas skema database.
+* **Database:** PostgreSQL sebagai database relasional utama.
+* **Security:** Bcrypt untuk enkripsi password dan Passport-JWT untuk manajemen token sesi.
+
+### Frontend (databank-frontend)
+* **Library:** React.js (Vite).
+* **State & Routing:** React Router DOM v7 dengan sistem *Protected Routes* yang berbasis permission.
+* **Icons & Animation:** React Icons & Motion untuk elemen UI yang interaktif.
+* **API Client:** Axios dengan konfigurasi interceptor untuk komunikasi backend yang efisien.
+
+## 📂 Struktur Proyek
+Proyek ini dikelola menggunakan **PNPM Workspace** untuk efisiensi manajemen dependensi di lingkungan monorepo.
+
+```bash
+# Setup & Instalasi
+$ pnpm install
+
+# Menjalankan Backend (Development)
+$ cd databank-backend && pnpm run start:dev
+
+# Menjalankan Frontend (Development)
+$ cd databank-frontend && pnpm run dev
