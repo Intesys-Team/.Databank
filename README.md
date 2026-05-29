@@ -29,7 +29,7 @@
 * **Operational Dashboard:** Dasbor real-time yang menyatukan metrik dari procurement, absensi, dan payroll.
 
 ### 🎨 Premium UI/UX
-* **Dynamic Styling:** Antarmuka responsif dengan dukungan penuh **Dark & Light Mode** menggunakan Native CSS.
+* **Dynamic Styling:** Antarmuka responsif dengan dukungan penuh menggunakan Native CSS.
 * **Performance:** Menggunakan *Code Splitting* dan *Lazy Loading* (React Suspense) untuk memastikan aplikasi tetap ringan dan cepat saat diakses.
 
 ## 🛠️ Analisis Tech Stack
